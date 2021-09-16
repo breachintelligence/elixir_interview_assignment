@@ -72,7 +72,7 @@ query findById($id: ID){
 ```
 
 ### Resolver hits
-Your server should track each time a graphQL resolver is invoked and maintain a count that can be queried by resolver name. For example, your
+Your server should track each time a graphQL resolver is invoked and maintain a count that can be queried by resolver name. Do not maintain this state in the postgres database. For example, your
 `find/2` resolver for users might look like this:
 ```elixir
 @spec find(map(), any) :: User.t_res()
